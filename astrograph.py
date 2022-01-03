@@ -12,7 +12,7 @@ root.geometry("1080x690")
 root.iconbitmap("Resources/code.ico")
 
 
-@lru_cache
+@lru_cache(maxsize=None)
 def getData():
    DATE = date.today()
    Date = DATE - timedelta(days=1)
