@@ -1,7 +1,5 @@
 from tkinter import *
-from tkinter.font import Font
 import qrcode
-from PIL import Image
 root = Tk()
 root.title("Codec")
 root.geometry("1080x690")
@@ -12,7 +10,6 @@ str_bin_out = Entry(string_to_bin_frame, width=30)
 def string_to_bin():
    global str_bin_out, bin_entry
    bin_string = bin_entry.get()
-   print(bin_string)
    for i in bin_string:
       result_binary = ''.join(format(ord(i), '08b'))
       data = result_binary
@@ -45,7 +42,6 @@ def morse_code_to_string():
    for element in range(0, len(code)):
       result = alpha_code.get(code[element])
    result_data = "".join(result)
-   print(result_data)
    mor_str_out.delete(0, END)
    mor_str_out.insert(0, result_data)
 
