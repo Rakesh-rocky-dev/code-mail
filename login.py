@@ -1,7 +1,6 @@
 from tkinter import *
 
 
-print("starting")
 root = Tk()
 root.title("Code Mail")
 root.geometry("1080x690")
@@ -13,14 +12,12 @@ def credentials():
    file = open("Credentials/cred.txt", "w")
    cred_data = f"{email},{paswd}"
    file.write(cred_data)
-   print(email, paswd)
    file.close()
    data = open("Credentials/cred.txt", "r")
    mail_data = data.read()
    email_data = mail_data.partition(",")
    email_id = email_data[0]
    pswd = email_data[2]
-   print(email_id, pswd)
    root.destroy()
    return email_id, pswd
 
