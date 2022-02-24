@@ -19,7 +19,7 @@ def open_file():
    file = askopenfilename(filetypes=[("All files", "*.*")])
    if file is not None:
       file_path = file
-      print(file_path)
+
 
 mail_id = ""
 mail_pswd = ""
@@ -48,27 +48,25 @@ def send():
    msg['To'] = to
    msg['Subject'] = Subject
    msg['Body'] = Body
-   print("hello" , file_path)
+
    if file_path == "" :
       msg.attach(MIMEText(Body, 'plain'))
       print(msg)
    else:
       msg.attach(MIMEText(Body, 'plain'))
-      print("filepath -",file_path)
+
       filename = file_path.split("/")
       filename = filename[-1]
-      print(filename)
+
       attachment = open(file_path, "rb")
-      print("attached")
+
       p = MIMEBase('application', 'octet-stream')
       p.set_payload((attachment).read())
       encoders.encode_base64(p)
       p.add_header('Content-Disposition',
                    "attachment; filename= %s" % filename)
       msg.attach(p)
-      print(msg)
-      print("attached")
-      print(file_path)
+
 
 
    smtp = smtplib.SMTP('smtp.gmail.com', 587)
@@ -77,7 +75,7 @@ def send():
    text = msg.as_string()
    smtp.sendmail(from_addr, to, text)
    smtp.quit
-   print("done")
+
 
 
 
