@@ -1,4 +1,3 @@
-from asyncore import read
 from tkinter import *
 import login
 
@@ -37,3 +36,4 @@ code_btn.pack(pady=15)
 logout_btn = Button(root, text="LogOut", width=30,fg="white", bg="#1EE8AB", command=logout)
 logout_btn.pack(pady=15)
 root.mainloop()
+
