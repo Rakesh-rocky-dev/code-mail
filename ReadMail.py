@@ -1,4 +1,3 @@
-
 import imaplib
 import email
 from pprint import pprint
@@ -18,7 +17,7 @@ def cred():
    mail_pswd = pswd
 
 cred()
-print(email_id_data, mail_pswd)
+
 
 
 @lru_cache(maxsize=None)
@@ -26,7 +25,7 @@ def read():
 	global email_id_data, mail_pswd
 	host = "imap.gmail.com"
 	mail = imaplib.IMAP4_SSL(host)
-	mail.login("007codemail@gmail.com", mail_pswd)
+	mail.login(email_id_data.strip(), mail_pswd)
 	mail.select("Inbox")
 	_, search_data = mail.search(None, 'ALL')
 
@@ -53,7 +52,7 @@ def read():
 try:
 	read()
 except:
-	message_box = messagebox.showerror("Error!","Either Email address or Password is wrong please restart the app :(")
+	message_box = messagebox.showerror("Error!","Either Email address or Password is wrong please restart the app or may you have not enabled imap settings :(")
 
 
 
@@ -71,7 +70,7 @@ for i in range(length):
 
 	data_from.append(from_data)
 	data_body.append(body_data)
-pprint(f"from: {data_from}, body: {data_body}")
+
 
 root = Tk()
 root.title("Read_mail")
@@ -107,5 +106,4 @@ listbox.config(xscrollcommand=hscrollbar.set)
 hscrollbar.config(command=listbox.xview)
 listbox.pack()
 frame.pack(fill=BOTH, expand=1)
-
 root.mainloop()
