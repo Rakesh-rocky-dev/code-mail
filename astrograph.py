@@ -53,7 +53,6 @@ def save_graph():
    DATE = date.today()
    Date = DATE - timedelta(days=1)
    plt.scatter(distance_x, element_count_y, edgecolors="black", c="red", s=10)
-   print(f"astro_graph_{Date}.png")
    plt.savefig(f"astro_graph{Date}.png")
 
 
