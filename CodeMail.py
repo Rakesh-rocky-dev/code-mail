@@ -6,13 +6,10 @@ root.title("Code Mail")
 root.geometry("450x300")
 root.iconbitmap("Resources/code.ico")
 def sending():
-   print("send")
    import sendMail
 def reading():
-   print("reading")
    import ReadMail
 def astrographing():
-   print("astrographing")
    import astrograph
 def codecing():
    import codec
